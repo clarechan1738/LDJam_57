@@ -68,19 +68,19 @@ public class DragScript : MonoBehaviour
     {
         if (gameObject.name == "Blue")
         {
-           TooltipUI.Instance.ShowTooltip_Static("Bat Wings\nUseful For Making Potions Of Somnia, Death, And Insight.");
+            TooltipUI.Instance.ShowTooltip_Static("Bat Wings");
         }
         else if (gameObject.name == "Red")
         {
-            TooltipUI.Instance.ShowTooltip_Static("Red Mushroom\nUseful For Making Potions Of Hallucination, Vomiting, And Ressurection");
+            TooltipUI.Instance.ShowTooltip_Static("Red Mushroom");
         }
         else if (gameObject.name == "Yellow")
         {
-            TooltipUI.Instance.ShowTooltip_Static("Golden Carrot\nUseful For Making Potions Of Vision, Love, And Allergy");
+            TooltipUI.Instance.ShowTooltip_Static("Golden Carrot");
         }
         else if (gameObject.name == "Green")
         {
-            TooltipUI.Instance.ShowTooltip_Static("Snake Venom\nUseful For Making Potions Of Hypotension, Hypertension, And Memory");
+            TooltipUI.Instance.ShowTooltip_Static("Snake Venom");
         }
     }
 

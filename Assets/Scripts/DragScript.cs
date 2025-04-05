@@ -6,9 +6,18 @@ using UnityEngine.EventSystems;
 
 public class DragScript : MonoBehaviour
 {
+    //Check If Currently Dragging
     private bool dragActive = false;
+    
     private Vector3 offset;
 
+    //Recipe Script Reference
+    private RecipeScript recipeScript;
+
+    private void Awake()
+    {
+        recipeScript = FindAnyObjectByType<RecipeScript>();
+    }
 
     void Update()
     {
@@ -33,9 +42,24 @@ public class DragScript : MonoBehaviour
     {
         if(collision.CompareTag("Pot"))
         {
-            Destroy(gameObject);
+            recipeScript.ingredientsNum++;
+            Destroy(this.gameObject);
+
+            //If Ingredient Being Added Is 0 Or 1, Send It To Recipe Script. Otherwise, Reset Ingredients To 0 After Combining
+            if (recipeScript.ingredientsNum == 0 || recipeScript.ingredientsNum == 1)
+            {
+                recipeScript.GetCurrentIngredient(this.gameObject.name, recipeScript.ingredientsNum);
+            }
+            else if (recipeScript.ingredientsNum == 2)
+            {
+                recipeScript.CombineIngredients();
+                Debug.Log(recipeScript.CombineIngredients());
+                recipeScript.ingredientsNum = 0;
+            }
+
         }
     }
+
 
 
 }

@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Dialogue", menuName = "Dialogue Storage")]
 public class DialogueStorage : ScriptableObject
 {
-    public Sprite talkerSprite;
-    public string speakingVoiceKey;
+    public Sprite speakerSprite;
+    public string speakerKey;
     public string speakerName;
     public List<string> dialogue;
     public float speed;

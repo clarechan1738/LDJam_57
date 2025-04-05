@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Cache;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -15,6 +16,11 @@ public class DragScript : MonoBehaviour
     private RecipeScript recipeScript;
 
     private TooltipUI tooltipUIScript;
+
+    private short correctPotions = 0;
+    private short mistakes = 0;
+
+    private short ending = 0;
 
     private void Awake()
     {
@@ -45,21 +51,51 @@ public class DragScript : MonoBehaviour
     {
         if(collision.CompareTag("Pot"))
         {
+
             Destroy(this.gameObject);
             recipeScript.ingredientsNum++;
 
-            //If Ingredient Being Added Is 0 Or 1, Send It To Recipe Script. Otherwise, Reset Ingredients To 0 After Combining
-            if (recipeScript.ingredientsNum == 1 || recipeScript.ingredientsNum == 2)
+            //Check Which Index Current Ingredient Is At Then Combine
+            if (recipeScript.ingredientsNum == 1)
             {
                 recipeScript.GetCurrentIngredient(this.gameObject.name, recipeScript.ingredientsNum);
             }
-            else if (recipeScript.ingredientsNum == 3)
+            else if(recipeScript.ingredientsNum == 2)
             {
-                recipeScript.CombineIngredients();
-                Debug.Log(recipeScript.CombineIngredients());
-                recipeScript.ingredientsNum = 0;
+                recipeScript.GetCurrentIngredient(this.gameObject.name, recipeScript.ingredientsNum);
+                if (recipeScript.CombineIngredients() == recipeScript.currentRecipe)
+                {
+                    //Complete Current Task & Select New One
+                    correctPotions++;
+
+                    //Check For End Of List?
+
+                    recipeScript.SetCurrentRecipe();
+                    recipeScript.ingredientsNum = 0;
+                }
+                else
+                {
+                    mistakes++;
+                    recipeScript.ingredientsNum = 0;
+                }
             }
 
+            //Ending Stuff
+            if (correctPotions >= 12 && mistakes <= 3)
+            {
+                //Best Ending
+                ending = 0;
+            }
+            else if (correctPotions >= 5 && correctPotions <= 11 && mistakes < 7 && mistakes >= 3)
+            {
+                //Mid Ending
+                ending = 1;
+            }
+            else if (correctPotions <= 4 && correctPotions >= 0 && mistakes >= 7)
+            {
+                //Bad Ending
+                ending = 2;
+            }
         }
     }
 

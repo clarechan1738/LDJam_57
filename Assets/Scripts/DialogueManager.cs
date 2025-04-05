@@ -9,7 +9,6 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue Objects")]
     [SerializeField] private TMP_Text speakerNameTxt;
     [SerializeField] private TMP_Text dialogueTxt;
-    [SerializeField] private Image speakerSprite;
     [SerializeField] private GameObject continueArrow;
 
     //Current Dialogue Object
@@ -49,8 +48,6 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(DialogueStorage inDialogue)
     {
         dialogue = inDialogue;
-
-        speakerSprite.overrideSprite = dialogue.speakerSprite;
         speakerNameTxt.text = dialogue.speakerName;
         dialogueTxt.text = "";
         continueArrow.SetActive(false);

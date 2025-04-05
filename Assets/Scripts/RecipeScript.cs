@@ -7,11 +7,54 @@ public class RecipeScript : MonoBehaviour
     public int ingredientsNum = 0;
 
     //List Of Recipes
-    private string[] recipes = { "Allergy", "Death", "Hallucination", "Hypertension", "Hypotension", "Insight", "Love", "Memory", "Resurrection", "Somnia", "Vision", "Vomiting" };
+    public string[] recipes = { "Allergy", "Death", "Hallucination", "Hypertension", "Hypotension", "Insight", "Love", "Memory", "Resurrection", "Somnia", "Vision", "Vomiting" };
+
+    public string currentRecipe = "";
+
+    Queue<string> recipeList = new Queue<string>(12);
 
     //Ingredients For Recipe
     private string ingredient1;
     private string ingredient2;
+
+    private void Awake()
+    {
+        QueueRecipes();
+        SetCurrentRecipe();
+    }
+
+    public void QueueRecipes()
+    {
+
+        string swapRecipe;
+
+        for(int i = 0; i < recipes.Length; i++)
+        {
+            int swapNum = Random.Range(0, recipes.Length);
+            swapRecipe = recipes[i];
+            recipes[i] = recipes[swapNum];
+            recipes[swapNum] = swapRecipe;
+        }
+
+        foreach (string recipe in recipes)
+        {
+            recipeList.Enqueue(recipe);
+        }
+
+    }
+    public void SetCurrentRecipe()
+    {
+        if (recipeList.Count > 0)
+        {
+            currentRecipe = recipeList.Dequeue();
+            Debug.Log("Current Recipe: " + currentRecipe);
+        }
+        else
+        {
+            QueueRecipes();
+            SetCurrentRecipe();
+        }
+    }
 
     //Gets Current Passed In Ingredient
     public void GetCurrentIngredient(string currIn, int index)

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d9755ac9ad356f4d92baa54b90d7c4e, type: 3}
+  m_Name: MehEnd
+  m_EditorClassIdentifier: 
+  speakerSprite: {fileID: 0}
+  speakerKey: clare_voice
+  speakerName: Clare
+  dialogue:
+  - At last, you finished your last day of work before your long-promised break time!
+  - You waited and waited for the guards to release you for your recess but to no
+    avail, no one came.
+  - You wondered what you could have done but then you recalled that you most definitely
+    handed out a few wrong potions. You thought 'how could that possibly be the reason?'
+  - But you knew very well that perfection is demanded of you. You noted that you
+    were lucky they didn't execute you.
+  - With that thought, you sat down and waited for the next customer or guard or
+    someone to show up but no one came.
+  - Thanks For Playing! ~Ending 2/3~
+  speed: 19

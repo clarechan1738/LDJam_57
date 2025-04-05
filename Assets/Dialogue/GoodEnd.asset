@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d9755ac9ad356f4d92baa54b90d7c4e, type: 3}
+  m_Name: GoodEnd
+  m_EditorClassIdentifier: 
+  speakerSprite: {fileID: 0}
+  speakerKey: clare_voice
+  speakerName: Clare
+  dialogue:
+  - Finally, you've reached the end of your journey.
+  - The king approved of your efforts and decided to grant you recess priveledges.
+  - You thoroughly enjoyed your 10 minutes of sunlight before being brought back
+    down to the Depths of the dungeon to resume your work.
+  - You noted that maybe if you work hard for the next 20 years, you will earn the
+    right to leave the dungeons. You quickly dismissed that thought knowing there
+    was no way this would happen.
+  - Thanks For Playing! ~Ending 1/3~
+  speed: 19

@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogueSystem : MonoBehaviour
+public class DialogueManager : MonoBehaviour
 {
     [Header("Dialogue Objects")]
     [SerializeField] private TMP_Text speakerNameTxt;

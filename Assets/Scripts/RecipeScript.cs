@@ -7,7 +7,7 @@ public class RecipeScript : MonoBehaviour
     public int ingredientsNum = 0;
 
     //List Of Recipes
-    private string[] recipes = { "Recipe1", "Recipe2", "Recipe3", "Recipe4", "Recipe5", "Recipe6"};
+    private string[] recipes = { "Allergy", "Death", "Hallucination", "Hypertension", "Hypotension", "Insight", "Love", "Memory", "Resurrection", "Somnia", "Vision", "Vomiting" };
 
     //Ingredients For Recipe
     private string ingredient1;
@@ -33,72 +33,62 @@ public class RecipeScript : MonoBehaviour
         {
             if(ingredient2 == "Red")
             {
-                Debug.Log("Recipe 1");
-                return recipes[0];
+                return recipes[1];
             }
             else if (ingredient2 == "Yellow")
             {
-                Debug.Log("Recipe 2");
-                return recipes[1];
+                return recipes[5];
             }
             else if (ingredient2 == "Green")
             {
-                Debug.Log("Recipe 3");
-                return recipes[2];
+                return recipes[9];
             }
         }
         else if (ingredient1 == "Red")
         {
             if (ingredient2 == "Blue")
             {
-                Debug.Log("Recipe 1");
-                return recipes[0];
+                return recipes[8];
             }
             else if (ingredient2 == "Yellow")
             {
-                Debug.Log("Recipe 4");
-                return recipes[3];
+                return recipes[2];
             }
             else if (ingredient2 == "Green")
             {
-                Debug.Log("Recipe 5");
-                return recipes[4];
+                return recipes[11];
             }
         }
         else if (ingredient1 == "Yellow")
         {
             if (ingredient2 == "Blue")
             {
-                Debug.Log("Recipe 2");
-                return recipes[1];
+                return recipes[6];
             }
             else if (ingredient2 == "Red")
             {
-                Debug.Log("Recipe 4");
-                return recipes[3];
+                return recipes[0];
             }
             else if (ingredient2 == "Green")
             {
-                Debug.Log("Recipe 6");
-                return recipes[5];
+                return recipes[10];
             }
         }
         else if (ingredient1 == "Green")
         {
             if(ingredient2 == "Blue")
             {
-                Debug.Log("Recipe 3");
-                return recipes[2];
+                return recipes[4];
             }
             else if (ingredient2 == "Red")
             {
                 Debug.Log("Recipe 5");
-                return recipes[4];
+                return recipes[7];
             }
             if (ingredient2 == "Yellow")
             {
                 Debug.Log("Recipe 6");
-                return recipes[5];
+                return recipes[3];
             }
         }
         return null;

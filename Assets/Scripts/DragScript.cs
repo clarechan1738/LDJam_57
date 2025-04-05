@@ -14,9 +14,12 @@ public class DragScript : MonoBehaviour
     //Recipe Script Reference
     private RecipeScript recipeScript;
 
+    private TooltipUI tooltipUIScript;
+
     private void Awake()
     {
         recipeScript = FindAnyObjectByType<RecipeScript>();
+        tooltipUIScript = FindAnyObjectByType<TooltipUI>();
     }
 
     void Update()
@@ -60,6 +63,29 @@ public class DragScript : MonoBehaviour
         }
     }
 
+    private void OnMouseOver()
+    {
+        if (gameObject.name == "Blue")
+        {
+           TooltipUI.Instance.ShowTooltip_Static("Bat Wings\nUseful For Making Potions Of Somnia, Death, And Insight.");
+        }
+        else if (gameObject.name == "Red")
+        {
+            TooltipUI.Instance.ShowTooltip_Static("Red Mushroom\nUseful For Making Potions Of Hallucination, Vomiting, And Ressurection");
+        }
+        else if (gameObject.name == "Yellow")
+        {
+            TooltipUI.Instance.ShowTooltip_Static("Golden Carrot\nUseful For Making Potions Of Vision, Love, And Allergy");
+        }
+        else if (gameObject.name == "Green")
+        {
+            TooltipUI.Instance.ShowTooltip_Static("Snake Venom\nUseful For Making Potions Of Hypotension, Hypertension, And Memory");
+        }
+    }
 
+    private void OnMouseExit()
+    {
+        TooltipUI.Instance.HideTooltip_Static();
+    }
 
 }

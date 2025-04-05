@@ -45,15 +45,15 @@ public class DragScript : MonoBehaviour
     {
         if(collision.CompareTag("Pot"))
         {
-            recipeScript.ingredientsNum++;
             Destroy(this.gameObject);
+            recipeScript.ingredientsNum++;
 
             //If Ingredient Being Added Is 0 Or 1, Send It To Recipe Script. Otherwise, Reset Ingredients To 0 After Combining
-            if (recipeScript.ingredientsNum == 0 || recipeScript.ingredientsNum == 1)
+            if (recipeScript.ingredientsNum == 1 || recipeScript.ingredientsNum == 2)
             {
                 recipeScript.GetCurrentIngredient(this.gameObject.name, recipeScript.ingredientsNum);
             }
-            else if (recipeScript.ingredientsNum == 2)
+            else if (recipeScript.ingredientsNum == 3)
             {
                 recipeScript.CombineIngredients();
                 Debug.Log(recipeScript.CombineIngredients());
@@ -63,6 +63,7 @@ public class DragScript : MonoBehaviour
         }
     }
 
+    //Tooltip Text For Hovering Objects
     private void OnMouseOver()
     {
         if (gameObject.name == "Blue")

@@ -16,17 +16,19 @@ public class RecipeScript : MonoBehaviour
     //Gets Current Passed In Ingredient
     public void GetCurrentIngredient(string currIn, int index)
     {
-        if(index == 0)
+        if(index == 1)
         {
             ingredient1 = currIn;
+            Debug.Log(ingredient1);
         }
-        else if(index == 1)
+        else if(index == 2)
         {
             ingredient2 = currIn;
+            Debug.Log(ingredient2);
         }
     }
 
-    //Combines The Two Passed In Ingredients
+    //Combines The Two Ingredients
     public string CombineIngredients()
     {
         if(ingredient1 == "Blue")
@@ -82,12 +84,10 @@ public class RecipeScript : MonoBehaviour
             }
             else if (ingredient2 == "Red")
             {
-                Debug.Log("Recipe 5");
                 return recipes[7];
             }
             if (ingredient2 == "Yellow")
             {
-                Debug.Log("Recipe 6");
                 return recipes[3];
             }
         }

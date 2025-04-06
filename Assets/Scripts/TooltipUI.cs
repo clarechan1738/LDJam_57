@@ -19,9 +19,15 @@ public class TooltipUI : MonoBehaviour
     private TextMeshProUGUI tmp;
     private RectTransform rectTransform;
 
+    private DialogueManager diaMgr;
+    private GameManager gameMgr;
+
     private void Awake()
     {
         Instance = this;
+
+        diaMgr = FindAnyObjectByType<DialogueManager>();
+        gameMgr = FindAnyObjectByType<GameManager>();
 
         bgRect = transform.Find("BG").GetComponent<RectTransform>();
         tmp = transform.Find("Text").GetComponent<TextMeshProUGUI>();
@@ -48,9 +54,13 @@ public class TooltipUI : MonoBehaviour
 
     public void ShowTooltip(string tooltip)
     {
-        gameObject.SetActive(true);
-        SetText(tooltip);
+        if (!diaMgr.dialogueActive && !gameMgr.gamePaused)
+        {
+            gameObject.SetActive(true);
+            SetText(tooltip);
+        }
     }
+
     public void HideTooltip()
     {
         gameObject.SetActive(false);
@@ -58,7 +68,10 @@ public class TooltipUI : MonoBehaviour
 
     public void ShowTooltip_Static(string tooltip)
     {
-        Instance.ShowTooltip(tooltip);
+        if(!diaMgr.dialogueActive && !gameMgr.gamePaused)
+        {
+            Instance.ShowTooltip(tooltip);
+        }
     }
 
     public void HideTooltip_Static()

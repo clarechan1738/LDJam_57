@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,7 +18,9 @@ public class RecipeScript : MonoBehaviour
 
     public Queue<string> recipeList = new Queue<string>(12);
 
-    public List<DialogueStorage> dialogueList = new List<DialogueStorage>(12);
+    public DialogueStorage[] dialogueList = new DialogueStorage[12];
+
+    private DialogueManager diaMgr;
 
     //Ingredients For Recipe
     private string ingredient1;
@@ -26,9 +30,15 @@ public class RecipeScript : MonoBehaviour
     public short correctPotions = 0;
     public short mistakes = 0;
 
+    [SerializeField]
+    private TextMeshProUGUI potionTxt;
+
+
     private void Awake()
     {
+        potionTxt.text = default;
         dragScript = FindAnyObjectByType<DragScript>();
+        diaMgr = FindAnyObjectByType<DialogueManager>();
         QueueRecipes();
         SetCurrentRecipe();
     }
@@ -54,32 +64,76 @@ public class RecipeScript : MonoBehaviour
     }
     public void SetCurrentRecipe()
     {
-        Debug.Log("Recipe Count: " + recipeList.Count);
 
-        if (recipeList.Count > 0)
+        if (recipeList.Count > 0 && !dragScript.gameOver)
         {
+
             currentRecipe = recipeList.Dequeue();
             Debug.Log("Current Recipe: " + currentRecipe);
+
+            //Display Potion Currently Trying To Attain
+            potionTxt.text = "Potion Of " + currentRecipe;
+
+            DisplayCurrentDialogue();
         }
         else
         {
-            if(dragScript.gameOver)
+            if (correctPotions == 12)
             {
-                if (correctPotions == 12)
-                {
-                    SceneManager.LoadScene("GoodEnding");
-                }
-                else if (mistakes == 12)
-                {
-                    SceneManager.LoadScene("BadEnding");
-                }
-                else
-                {
-                    SceneManager.LoadScene("MehEnding");
-                }
+                SceneManager.LoadScene("GoodEnding");
             }
-            
-            
+            else if (mistakes == 12)
+            {
+                SceneManager.LoadScene("BadEnding");
+            }
+            else
+            {
+                SceneManager.LoadScene("MehEnding");
+            }
+        }
+    }
+
+    public void DisplayCurrentDialogue()
+    {
+        //Display Dialogue Depending On Current Recipe
+        switch (currentRecipe)
+        {
+            case "Allergy":
+                diaMgr.StartDialogue(dialogueList[0]);
+                break;
+            case "Death":
+                diaMgr.StartDialogue(dialogueList[1]);
+                break;
+            case "Hallucination":
+                diaMgr.StartDialogue(dialogueList[2]);
+                break;
+            case "Hypertension":
+                diaMgr.StartDialogue(dialogueList[3]);
+                break;
+            case "Hypotension":
+                diaMgr.StartDialogue(dialogueList[4]);
+                break;
+            case "Insight":
+                diaMgr.StartDialogue(dialogueList[5]);
+                break;
+            case "Love":
+                diaMgr.StartDialogue(dialogueList[6]);
+                break;
+            case "Memory":
+                diaMgr.StartDialogue(dialogueList[7]);
+                break;
+            case "Resurrection":
+                diaMgr.StartDialogue(dialogueList[8]);
+                break;
+            case "Somnia":
+                diaMgr.StartDialogue(dialogueList[9]);
+                break;
+            case "Vision":
+                diaMgr.StartDialogue(dialogueList[10]);
+                break;
+            case "Vomiting":
+                diaMgr.StartDialogue(dialogueList[11]);
+                break;
         }
     }
 

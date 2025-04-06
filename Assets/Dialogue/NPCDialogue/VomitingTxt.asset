@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d9755ac9ad356f4d92baa54b90d7c4e, type: 3}
   m_Name: VomitingTxt
   m_EditorClassIdentifier: 
-  speakerKey: clare_voice
+  speakerKey: feminine
   speakerName: High School Cheerleader
   dialogue:
   - Hiiiii! I'm Chelsea! I need to stay fit and skinny for my next cheer rally!

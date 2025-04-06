@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d9755ac9ad356f4d92baa54b90d7c4e, type: 3}
   m_Name: IntroDialogue
   m_EditorClassIdentifier: 
-  speakerSprite: {fileID: 0}
   speakerKey: clare_voice
   speakerName: Clare
   dialogue:
   - Hello, welcome to Insert Title Here...
-  - Your job is to help the customers get to the bottom of their problems and give
-    them the right combination of ingredients for a cure.
+  - You are playing as an unnamed character who wants to escape the depths of the
+    dungeon while also helping others by creating cures.
+  - Customers will ask you for specific potions. You can drag and drop items into
+    the cauldron with left click.
+  - Click the BOOK icon (once in game) in the bottom right to see your list of recipes!
+  - Have fun! Click The Continue Button To Start!
   speed: 19

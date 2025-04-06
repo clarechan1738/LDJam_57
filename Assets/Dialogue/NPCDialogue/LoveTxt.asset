@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d9755ac9ad356f4d92baa54b90d7c4e, type: 3}
   m_Name: LoveTxt
   m_EditorClassIdentifier: 
-  speakerKey: clare_voice
+  speakerKey: manly
   speakerName: Angry Husband
   dialogue:
   - Hello, yes. I don't have time for introductions. Please make me a Love Potion

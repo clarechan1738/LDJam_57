@@ -58,17 +58,20 @@ public class DialogueManager : MonoBehaviour
         }
 
         StartCoroutine(DialogueLoop());
+
     }
 
     public IEnumerator DialogueLoop()
     {
+
         //Dialogue Is Set To Active
         dialogueActive = true;
 
-        gameObject.SetActive(true);
+        //gameObject.SetActive(true);
         rectTransform.anchoredPosition = offscreenPos;
         continueDialogue = false;
         coroutineRunning = true;
+
 
         float slerp = 0;
         while (rectTransform.anchoredPosition != Vector2.zero)

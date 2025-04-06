@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d9755ac9ad356f4d92baa54b90d7c4e, type: 3}
   m_Name: HypertensionTxt
   m_EditorClassIdentifier: 
-  speakerKey: clare_voice
+  speakerKey: feminine_older
   speakerName: Middle-Aged Woman
   dialogue:
   - Hello young man-- oh, you're a girl? My apologies dear, my eyes aren't what they

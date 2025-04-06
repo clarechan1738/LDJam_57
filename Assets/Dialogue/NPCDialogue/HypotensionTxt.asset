@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d9755ac9ad356f4d92baa54b90d7c4e, type: 3}
+  m_Name: HypotensionTxt
+  m_EditorClassIdentifier: 
+  speakerKey: clare_voice
+  speakerName: Friendly Elderly Man
+  dialogue:
+  - Hi there lassie! Good to meetcha! I'd like one of those whatchamacallits?
+  - Yes, a Hypotension Potion! One of those to lower this darn blood pressure.
+  - I'll give you a good tip if you're quick, so get a move on!
+  speed: 17

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d9755ac9ad356f4d92baa54b90d7c4e, type: 3}
+  m_Name: InsightTxt
+  m_EditorClassIdentifier: 
+  speakerKey: clare_voice
+  speakerName: Aspiring Psychic
+  dialogue:
+  - Good evening. I assume a fellow magic practitioner such as yourself would understand
+    why I have arrived.
+  - Oh, you don't read minds? Well, my dear, I do! I can tell you are feeling a sense
+    of awe of my abilities.
+  - While I adore the praise, please move along with my Potion Of Insight. I need
+    to keep my third eye sharp!
+  speed: 19

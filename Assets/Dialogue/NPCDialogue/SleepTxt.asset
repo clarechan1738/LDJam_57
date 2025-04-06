@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d9755ac9ad356f4d92baa54b90d7c4e, type: 3}
+  m_Name: SleepTxt
+  m_EditorClassIdentifier: 
+  speakerKey: clare_voice
+  speakerName: Scared Child
+  dialogue:
+  - Mom sent me here to get a Sleep Potion.
+  - Well, she says she's going to use it on me if I don't go to bed at 8pm. I'm almost
+    10! My bedtime should be 10!
+  - Aww, come on, why are all adults like this...
+  speed: 16

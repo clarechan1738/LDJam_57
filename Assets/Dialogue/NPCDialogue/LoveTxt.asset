@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d9755ac9ad356f4d92baa54b90d7c4e, type: 3}
+  m_Name: LoveTxt
+  m_EditorClassIdentifier: 
+  speakerKey: clare_voice
+  speakerName: Angry Husband
+  dialogue:
+  - Hello, yes. I don't have time for introductions. Please make me a Love Potion
+    ASAP.
+  - Why do I need it? Why do you need to know?
+  - '*Sigh* Alright. My wife has been a nightmare lately but she won''t sign the
+    divorce papers. I want to help her move on so we can move forward with the divorce.'
+  - That's a weird use for a Love Potion? I don't care! Just make the damn potion!
+  speed: 18

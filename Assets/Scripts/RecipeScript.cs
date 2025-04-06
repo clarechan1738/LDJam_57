@@ -1,24 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RecipeScript : MonoBehaviour
 {
     public int ingredientsNum = 0;
+
+    private DragScript dragScript;
 
     //List Of Recipes
     public string[] recipes = { "Allergy", "Death", "Hallucination", "Hypertension", "Hypotension", "Insight", "Love", "Memory", "Resurrection", "Somnia", "Vision", "Vomiting" };
 
     public string currentRecipe = "";
 
-    Queue<string> recipeList = new Queue<string>(12);
+    public Queue<string> recipeList = new Queue<string>(12);
+
+    public List<DialogueStorage> dialogueList = new List<DialogueStorage>(12);
 
     //Ingredients For Recipe
     private string ingredient1;
     private string ingredient2;
 
+    //Potion Stuff
+    public short correctPotions = 0;
+    public short mistakes = 0;
+
     private void Awake()
     {
+        dragScript = FindAnyObjectByType<DragScript>();
         QueueRecipes();
         SetCurrentRecipe();
     }
@@ -44,6 +54,8 @@ public class RecipeScript : MonoBehaviour
     }
     public void SetCurrentRecipe()
     {
+        Debug.Log("Recipe Count: " + recipeList.Count);
+
         if (recipeList.Count > 0)
         {
             currentRecipe = recipeList.Dequeue();
@@ -51,8 +63,23 @@ public class RecipeScript : MonoBehaviour
         }
         else
         {
-            QueueRecipes();
-            SetCurrentRecipe();
+            if(dragScript.gameOver)
+            {
+                if (correctPotions == 12)
+                {
+                    SceneManager.LoadScene("GoodEnding");
+                }
+                else if (mistakes == 12)
+                {
+                    SceneManager.LoadScene("BadEnding");
+                }
+                else
+                {
+                    SceneManager.LoadScene("MehEnding");
+                }
+            }
+            
+            
         }
     }
 
@@ -78,60 +105,60 @@ public class RecipeScript : MonoBehaviour
         {
             if(ingredient2 == "Red")
             {
-                return recipes[1];
+                return "Death";
             }
             else if (ingredient2 == "Yellow")
             {
-                return recipes[5];
+                return "Insight";
             }
             else if (ingredient2 == "Green")
             {
-                return recipes[9];
+                return "Somnia";
             }
         }
         else if (ingredient1 == "Red")
         {
             if (ingredient2 == "Blue")
             {
-                return recipes[8];
+                return "Resurrection";
             }
             else if (ingredient2 == "Yellow")
             {
-                return recipes[2];
+                return "Hallucination";
             }
             else if (ingredient2 == "Green")
             {
-                return recipes[11];
+                return "Vomiting";
             }
         }
         else if (ingredient1 == "Yellow")
         {
             if (ingredient2 == "Blue")
             {
-                return recipes[6];
+                return "Love";
             }
             else if (ingredient2 == "Red")
             {
-                return recipes[0];
+                return "Allergy";
             }
             else if (ingredient2 == "Green")
             {
-                return recipes[10];
+                return "Vision";
             }
         }
         else if (ingredient1 == "Green")
         {
             if(ingredient2 == "Blue")
             {
-                return recipes[4];
+                return "Hypotension";
             }
             else if (ingredient2 == "Red")
             {
-                return recipes[7];
+                return "Memory";
             }
             if (ingredient2 == "Yellow")
             {
-                return recipes[3];
+                return "Hypertension";
             }
         }
         return null;

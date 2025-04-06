@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Cache;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class DragScript : MonoBehaviour
 {
@@ -17,23 +19,33 @@ public class DragScript : MonoBehaviour
 
     private TooltipUI tooltipUIScript;
 
-    private short correctPotions = 0;
-    private short mistakes = 0;
+    private DialogueManager diaMgr;
 
-    private short ending = 0;
+    private GameManager gameManager;
+
+    public bool gameOver = false;
 
     private void Awake()
     {
         recipeScript = FindAnyObjectByType<RecipeScript>();
         tooltipUIScript = FindAnyObjectByType<TooltipUI>();
+        diaMgr = FindAnyObjectByType<DialogueManager>();
+        gameManager = FindAnyObjectByType<GameManager>();
     }
 
     void Update()
     {
-        if (dragActive)
+        if (dragActive && !diaMgr.dialogueActive && !gameManager.gamePaused)
         {
             transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
         }
+
+        if((recipeScript.recipeList.Count() - 1) == 0)
+        {
+            gameOver = true;
+        }
+
+        
     }
 
     private void OnMouseDown()
@@ -63,39 +75,24 @@ public class DragScript : MonoBehaviour
             else if(recipeScript.ingredientsNum == 2)
             {
                 recipeScript.GetCurrentIngredient(this.gameObject.name, recipeScript.ingredientsNum);
+                Debug.Log("Result: " + recipeScript.CombineIngredients());
                 if (recipeScript.CombineIngredients() == recipeScript.currentRecipe)
                 {
+                    recipeScript.correctPotions++;
+                    Debug.Log("Correct Potions Made: " + recipeScript.correctPotions);
                     //Complete Current Task & Select New One
-                    correctPotions++;
-
-                    //Check For End Of List?
-
                     recipeScript.SetCurrentRecipe();
                     recipeScript.ingredientsNum = 0;
                 }
                 else
                 {
-                    mistakes++;
+                    recipeScript.mistakes++;
+                    Debug.Log("Mistakes Made: " + recipeScript.mistakes);
+                    recipeScript.SetCurrentRecipe();
                     recipeScript.ingredientsNum = 0;
                 }
             }
 
-            //Ending Stuff
-            if (correctPotions >= 12 && mistakes <= 3)
-            {
-                //Best Ending
-                ending = 0;
-            }
-            else if (correctPotions >= 5 && correctPotions <= 11 && mistakes < 7 && mistakes >= 3)
-            {
-                //Mid Ending
-                ending = 1;
-            }
-            else if (correctPotions <= 4 && correctPotions >= 0 && mistakes >= 7)
-            {
-                //Bad Ending
-                ending = 2;
-            }
         }
     }
 

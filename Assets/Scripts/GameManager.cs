@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
-    private float timer = 60f;
     [SerializeField]
     private GameObject pauseMenu;
+
+    public bool gamePaused = false;
 
     private DialogueManager dialogueMgr;
 
@@ -21,19 +22,17 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (timer > 0)
-        {
-            timer -= Time.deltaTime * 1f;
-        }
 
         if(Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 1 && !dialogueMgr.dialogueActive)
         {
             pauseMenu.SetActive(true);
+            gamePaused = true;
             Time.timeScale = 0;
         }
         else if(Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 0)
         {
             pauseMenu.SetActive(false);
+            gamePaused = false;
             Time.timeScale = 1;
         }
     }
@@ -42,6 +41,7 @@ public class GameManager : MonoBehaviour
     public void Resume()
     {
         pauseMenu.SetActive(false);
+        gamePaused = false;
         Time.timeScale = 1;
     }
 

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d9755ac9ad356f4d92baa54b90d7c4e, type: 3}
+  m_Name: VomitingTxt
+  m_EditorClassIdentifier: 
+  speakerKey: clare_voice
+  speakerName: High School Cheerleader
+  dialogue:
+  - Hiiiii! I'm Chelsea! I need to stay fit and skinny for my next cheer rally!
+  - No I'm not going to just eat salads and excersise! Are you crazy?!
+  - Of course I'm talking about a Potion Of Vomiting! Quickest way to diet around
+    here! Hop to it girlie, I need it like NOW?!
+  speed: 17

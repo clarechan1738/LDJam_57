@@ -31,6 +31,8 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip page;
     public AudioClip drop;
+    public AudioClip wrong;
+    public AudioClip correct;
 
     private void Awake()
     {

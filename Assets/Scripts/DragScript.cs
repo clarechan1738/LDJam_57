@@ -77,6 +77,7 @@ public class DragScript : MonoBehaviour
                 recipeScript.GetCurrentIngredient(this.gameObject.name, recipeScript.ingredientsNum);
                 if (recipeScript.CombineIngredients() == recipeScript.currentRecipe)
                 {
+                    AudioManager.instance.source.PlayOneShot(AudioManager.instance.correct);
                     recipeScript.correctPotions++;
                     //Complete Current Task & Select New One
                     recipeScript.SetCurrentRecipe();
@@ -84,6 +85,7 @@ public class DragScript : MonoBehaviour
                 }
                 else
                 {
+                    AudioManager.instance.source.PlayOneShot(AudioManager.instance.wrong);
                     recipeScript.mistakes++;
                     recipeScript.SetCurrentRecipe();
                     recipeScript.ingredientsNum = 0;

@@ -64,6 +64,8 @@ MonoBehaviour:
   source: {fileID: 496231560172638569}
   page: {fileID: 8300000, guid: 84509d83a0b091c44bd2864123a22ab9, type: 3}
   drop: {fileID: 8300000, guid: c055716d4ed90d9429bbaab4cd39ed33, type: 3}
+  wrong: {fileID: 8300000, guid: 3c7a5052b2e6c054492e240bc44ac963, type: 3}
+  correct: {fileID: 8300000, guid: b9331c5c5cb2673468aeb27decfd4bc2, type: 3}
 --- !u!82 &5748335279766080008
 AudioSource:
   m_ObjectHideFlags: 0
@@ -120,7 +122,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.412
+      value: 0.167
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -216,7 +218,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.419
+      value: 0.218
       inSlope: 0
       outSlope: 0
       tangentMode: 0

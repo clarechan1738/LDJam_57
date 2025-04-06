@@ -65,6 +65,7 @@ public class DragScript : MonoBehaviour
         {
             AudioManager.instance.source.PlayOneShot(AudioManager.instance.drop);
             Destroy(this.gameObject);
+            TooltipUI.Instance.HideTooltip_Static();
             recipeScript.ingredientsNum++;
 
             //Check Which Index Current Ingredient Is At Then Combine

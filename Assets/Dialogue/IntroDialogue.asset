@@ -16,10 +16,10 @@ MonoBehaviour:
   speakerName: Clare
   dialogue:
   - Hello, welcome to Dungeon Chef!
-  - You are playing as an unnamed character who wants to escape the depths of the
-    dungeon while also helping others by creating cures.
+  - You will play as an unnamed character hoping to escape from the depths of despair
+    and dungeons by crafting potions.
   - Customers will ask you for specific potions. You can drag and drop items into
     the cauldron with left click.
   - Click the BOOK icon (once in game) in the bottom right to see your list of recipes!
-  - Have fun! Click The Continue Button To Start!
+  - Have fun! Click The Continue Button In The Top Left To Start!
   speed: 19

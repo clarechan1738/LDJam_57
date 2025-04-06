@@ -16,7 +16,7 @@ MonoBehaviour:
   speakerName: Blind Man
   dialogue:
   - Hello there sonny, what's your name? You don't know? Strange...
-  - Moving on. Can I get me one of them Potions Of Vision, you can probably guess
-    why.
-  - Isn't it obvious? I'm blind... nevermind. Just get it done please.
+  - Moving on. Can I get me one of them Potions Of Vision, do I need to explain any
+    further?
+  - Wha? Isn't it obvious? I'm bli-... nevermind. Just get it done please.
   speed: 15

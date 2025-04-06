@@ -16,7 +16,7 @@ MonoBehaviour:
   speakerName: Scared Child
   dialogue:
   - Mom sent me here to get a Sleep Potion.
-  - Well, she says she's going to use it on me if I don't go to bed at 8pm. I'm almost
-    10! My bedtime should be 10!
+  - Why? Well, she says she's going to use it on me since I've been trying to stay
+    up past 8.. I'm almost 10! My bedtime should be 10!
   - Aww, come on, why are all adults like this...
   speed: 16

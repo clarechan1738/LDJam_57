@@ -19,8 +19,7 @@ public class AudioManager : MonoBehaviour
     //Making It An Instance
     public static AudioManager instance
     {
-        get;
-        private set;
+        get; private set;
     }
 
     //Temporary Audio Clip List
@@ -28,7 +27,10 @@ public class AudioManager : MonoBehaviour
     private Dictionary<string, AudioClip> SFXList = new();
 
     //Main Audio Source
-    [SerializeField] private AudioSource source;
+    public AudioSource source;
+
+    public AudioClip page;
+    public AudioClip drop;
 
     private void Awake()
     {

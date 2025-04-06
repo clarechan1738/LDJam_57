@@ -44,7 +44,8 @@ public class BookManager : MonoBehaviour
 
     public void NextPage()
     {
-        switch(currentPage)
+        AudioManager.instance.source.PlayOneShot(AudioManager.instance.page);
+        switch (currentPage)
         {
             case 0:
                 page1and2.gameObject.SetActive(true);

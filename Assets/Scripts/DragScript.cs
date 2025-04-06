@@ -63,7 +63,7 @@ public class DragScript : MonoBehaviour
     {
         if(collision.CompareTag("Pot"))
         {
-
+            AudioManager.instance.source.PlayOneShot(AudioManager.instance.drop);
             Destroy(this.gameObject);
             recipeScript.ingredientsNum++;
 
@@ -75,11 +75,9 @@ public class DragScript : MonoBehaviour
             else if(recipeScript.ingredientsNum == 2)
             {
                 recipeScript.GetCurrentIngredient(this.gameObject.name, recipeScript.ingredientsNum);
-                Debug.Log("Result: " + recipeScript.CombineIngredients());
                 if (recipeScript.CombineIngredients() == recipeScript.currentRecipe)
                 {
                     recipeScript.correctPotions++;
-                    Debug.Log("Correct Potions Made: " + recipeScript.correctPotions);
                     //Complete Current Task & Select New One
                     recipeScript.SetCurrentRecipe();
                     recipeScript.ingredientsNum = 0;
@@ -87,7 +85,6 @@ public class DragScript : MonoBehaviour
                 else
                 {
                     recipeScript.mistakes++;
-                    Debug.Log("Mistakes Made: " + recipeScript.mistakes);
                     recipeScript.SetCurrentRecipe();
                     recipeScript.ingredientsNum = 0;
                 }

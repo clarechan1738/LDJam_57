@@ -21,6 +21,8 @@ public class RecipeScript : MonoBehaviour
     public DialogueStorage[] dialogueList = new DialogueStorage[12];
 
     private DialogueManager diaMgr;
+    
+    private GameManager gameMgr;
 
     //Ingredients For Recipe
     private string ingredient1;
@@ -33,14 +35,34 @@ public class RecipeScript : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI potionTxt;
 
+    private float timer = 300f;
+
 
     private void Awake()
     {
         potionTxt.text = default;
         dragScript = FindAnyObjectByType<DragScript>();
+        gameMgr = FindAnyObjectByType<GameManager>();
         diaMgr = FindAnyObjectByType<DialogueManager>();
         QueueRecipes();
         SetCurrentRecipe();
+    }
+
+    private void Update()
+    {
+        if(timer > 0 && !diaMgr.dialogueActive && !gameMgr.gamePaused)
+        {
+            timer -= Time.deltaTime * 1f;
+        }
+        else if(diaMgr.dialogueActive || gameMgr.gamePaused)
+        {
+            //Do Nothing
+        }
+        else
+        {
+            dragScript.gameOver = true;
+            SceneManager.LoadScene("SlowEnding");
+        }
     }
 
     public void QueueRecipes()
@@ -69,7 +91,6 @@ public class RecipeScript : MonoBehaviour
         {
 
             currentRecipe = recipeList.Dequeue();
-            Debug.Log("Current Recipe: " + currentRecipe);
 
             //Display Potion Currently Trying To Attain
             potionTxt.text = "Potion Of " + currentRecipe;
@@ -143,12 +164,10 @@ public class RecipeScript : MonoBehaviour
         if(index == 1)
         {
             ingredient1 = currIn;
-            Debug.Log(ingredient1);
         }
         else if(index == 2)
         {
             ingredient2 = currIn;
-            Debug.Log(ingredient2);
         }
     }
 

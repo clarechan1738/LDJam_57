@@ -485,8 +485,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: All Assets Created By Clare Benn In 48 Hours For The Ludum Dare Compo Category!
-    :)
+  m_text: All Assets Created By Clare Benn In 48 Hours For The Ludum Dare 57 Compo
+    Category! :)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6454567d234c16a41aa82d3e02149a01, type: 2}
   m_sharedMaterial: {fileID: 1782710294924105214, guid: 6454567d234c16a41aa82d3e02149a01, type: 2}

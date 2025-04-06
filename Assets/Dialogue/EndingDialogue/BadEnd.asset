@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d9755ac9ad356f4d92baa54b90d7c4e, type: 3}
   m_Name: BadEnd
   m_EditorClassIdentifier: 
-  speakerSprite: {fileID: 0}
   speakerKey: clare_voice
   speakerName: Clare
   dialogue:
@@ -28,5 +27,5 @@ MonoBehaviour:
   - Despite your best efforts, the king declared you a witch and you were sentenced
     to death. You looked up to the sky one last time and enjoyed your last taste
     of freedom.
-  - Thanks For Playing! ~Ending 3/3~
+  - Thanks For Playing! ~Ending 3/4~
   speed: 19

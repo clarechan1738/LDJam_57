@@ -15,7 +15,7 @@ MonoBehaviour:
   speakerKey: clare_voice
   speakerName: Clare
   dialogue:
-  - Hello, welcome to Insert Title Here...
+  - Hello, welcome to Dungeon Chef!
   - You are playing as an unnamed character who wants to escape the depths of the
     dungeon while also helping others by creating cures.
   - Customers will ask you for specific potions. You can drag and drop items into

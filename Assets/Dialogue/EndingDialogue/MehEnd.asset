@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d9755ac9ad356f4d92baa54b90d7c4e, type: 3}
   m_Name: MehEnd
   m_EditorClassIdentifier: 
-  speakerSprite: {fileID: 0}
   speakerKey: clare_voice
   speakerName: Clare
   dialogue:
@@ -25,5 +24,5 @@ MonoBehaviour:
     were lucky they didn't execute you.
   - With that thought, you sat down and waited for the next customer or guard or
     someone to show up but no one came.
-  - Thanks For Playing! ~Ending 2/3~
+  - Thanks For Playing! ~Ending 2/4~
   speed: 19
